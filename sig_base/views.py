@@ -1,7 +1,13 @@
 """Modulo para configurar las vistas de los modelos, que cantidad de informacion y en que forma."""
 
 from rest_framework import viewsets
+from django.shortcuts import render
+from django.http import HttpRequest
 from . import models, serializers
+
+
+def frontend(request: HttpRequest):
+    return render(request, "index.html")
 
 class Afiliado(viewsets.ModelViewSet):
     queryset = models.Afiliado.objects.all()

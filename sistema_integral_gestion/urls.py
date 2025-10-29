@@ -17,6 +17,6 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path("models/sig/", include("sig_base.urls")),
-    path("models/sic/", include("sistema_integral_contactabilidad.urls"))
+    path("", include("sig_base.urls")),
+    path("api/sic/", include("sistema_integral_contactabilidad.urls"))
 ]
