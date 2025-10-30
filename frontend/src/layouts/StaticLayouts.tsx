@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 
 function StaticLayout() {
   return (
-    <Container fluid>
+    <Container fluid className="static-bg">
       
     </Container>
   )
