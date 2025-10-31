@@ -1,0 +1,82 @@
+// Variables antes de @use
+$primary: #00a09b;
+$primary-light: #32d9c3;
+$primary-dark: #13bfd6;
+
+$secondary: #645dc7;
+$success: #88db65;
+$info: #24ce7b;
+$warning: #32d9c3;
+$danger: #13bfd6;
+
+$gray-100: #949599;
+$gray-200: #74787a;
+$gray-300: #585b5d;
+$gray-400: #231f20;
+
+$body-bg: #ffffff;
+$body-color: $gray-400;
+
+// Importar Bootstrap usando @use
+@use "bootstrap" with (
+  $primary: $primary,
+  $secondary: $secondary,
+  $success: $success,
+  $info: $info,
+  $warning: $warning,
+  $danger: $danger,
+  $light: $gray-100,
+  $dark: $gray-400,
+  $body-bg: $body-bg,
+  $body-color: $body-color,
+);
+
+// Resto de personalizaciones (botones, clases auxiliares)
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover, &:focus {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+  }
+
+  &:active, &.active, .show > &.dropdown-toggle {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+  }
+
+  &:disabled, &.disabled {
+    background-color: $primary-light;
+    border-color: $primary-light;
+  }
+}
+
+// Clases auxiliares
+.text-primary-light { color: $primary-light !important; }
+.text-primary-dark { color: $primary-dark !important; }
+
+.bg-primary-light { background-color: $primary-light !important; }
+.bg-primary-dark { background-color: $primary-dark !important; }
+
+.text-gray-100 { color: $gray-100 !important; }
+.text-gray-200 { color: $gray-200 !important; }
+.text-gray-300 { color: $gray-300 !important; }
+.text-gray-400 { color: $gray-400 !important; }
+
+.bg-gray-100 { background-color: $gray-100 !important; }
+.bg-gray-200 { background-color: $gray-200 !important; }
+.bg-gray-300 { background-color: $gray-300 !important; }
+.bg-gray-400 { background-color: $gray-400 !important; }
+
+.bg-body-primary {
+  background-color: rgba($primary-light, 0.25) !important;
+}
+
+.bg-body-secondary {
+  background-color: rgba($secondary, 0.15) !important;
+}
+
+.bg-body-tertiary {
+  background-color: rgba($primary, 0.1) !important;
+}

@@ -8,7 +8,6 @@ export default defineConfig({
         outDir: resolve(__dirname, "../static/frontend"),
         emptyOutDir: true,
     },
-    base: "/static/frontend/",
     server: {
         port: 5173,
         open: true,
