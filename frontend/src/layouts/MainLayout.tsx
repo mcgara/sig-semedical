@@ -35,6 +35,10 @@ export default function MainLayout() {
 
           <Container fluid className="d-flex w-50 justify-content-end align-items-center px-4">
 
+            <Navbar.Brand href="/">
+              
+            </Navbar.Brand>
+            
           </Container>
         </Navbar>
       </header>
