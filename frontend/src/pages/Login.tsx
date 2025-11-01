@@ -27,8 +27,8 @@ export default function Login() {
               <Form.Label>Contraseña</Form.Label>
               <Form.Control type="password" />
             </Form.Group>
-            <Form.Group controlId="loginFormCheckboxRemenberMe" className="checkbox-align">
-              <Form.Check type="checkbox" label="Recuerdame" />
+            <Form.Group controlId="loginFormCheckboxRemenberMe">
+              <Form.Check type="checkbox" className="m-0" label="Recuerdame" />
             </Form.Group>
 
           </Card.Body>

@@ -1,4 +1,6 @@
 @font-face {
   font-family: "Baloo Bhaina 2";
-  src: url("/fonts/baloo-bhaina-2/webfonts/baloo-bhaina-2-latin-400-normal.woff2") format("truetype");
+  src: url("/fonts/baloo-bhaina-2/webfonts/baloo-bhaina-2-latin-400-normal.woff2") format("woff2");
+  ascent-override: 150%; /* Esta fuente esta dibujada por encima del centro */
+  line-gap-override: normal;
 }

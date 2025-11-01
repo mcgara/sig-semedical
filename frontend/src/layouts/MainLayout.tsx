@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Container, Navbar, Nav } from 'react-bootstrap';
-import LogoPrevisaludCobranding from "../assets/logo_previsalud_cobranding.svg"
-import IconMenu from "../assets/menu-button-2.svg"
+import { Container, Navbar } from 'react-bootstrap';
+import SidebarModules from "../components/SidebarModules"
 
 export default function MainLayout() {
   return <>
@@ -11,28 +10,31 @@ export default function MainLayout() {
           <Container fluid className="d-flex justify-content-start align-items-center px-4">
 
             <div className="d-flex justify-content-start align-items-center gap-4">
-              <img
-                alt="Icon Menu"
-                src={IconMenu}
-                height="26rem"
-                className="d-inline-block align-top"
-                />
+              <SidebarModules />
 
               <Navbar.Brand href="/">
-                <img
-                  alt="Logo Previsalud Cobranding"
-                  src={LogoPrevisaludCobranding}
-                  height="32rem"
-                  className="d-inline-block align-top"
-                  />
+                <Navbar.Text className="text-primary fs-4 fw-bold p-0">
+                  Sistema Integral Gestion
+                </Navbar.Text>
               </Navbar.Brand>
             </div>
 
             <p className="fs-3 m-0 text-light">|</p>
-            <Container className="m-0">
-              <p className="text-light m-0 fw-normal" >Previsalud</p>
-              <p className="text-light m-0 fw-normal" >Farmacias en Red</p>
+            <Container className="text-light fw-normal m-0 d-flex flex-row align-items-center">
+              {/* TODO: variar segun la empresa seleccionada, los datos independientes. */}
+              <p className="text-light m-0 fw-normal" >Área Aplicacion</p>
+              <span className="text-primary fs-5 mx-1">{">"}</span>
+              <p className="text-light m-0 fw-normal" >Grupo Modulos</p>
+              <span className="text-primary fs-5 mx-1">{">"}</span>
+              <p className="text-light m-0 fw-normal" >Subgrupo Modulos</p>
+              <span className="text-primary fs-5 mx-1">{">"}</span>
+              <p className="text-light m-0 fw-normal" >Modulo</p>
             </Container>
+
+          </Container>
+
+          <Container fluid className="d-flex w-50 justify-content-end align-items-center px-4">
+
           </Container>
         </Navbar>
       </header>
