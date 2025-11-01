@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+from . import reload_hooks as _
 
 # Ensure UTF-8 encoding when reading .env file
 BASE_DIR_TEMP = Path(__file__).resolve().parent.parent
