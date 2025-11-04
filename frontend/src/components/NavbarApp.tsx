@@ -3,7 +3,7 @@ import SidebarModules from "./SidebarModules"
 
 export default function NavbarApp() {
     return <>
-        <Navbar className="bg-body-tertiary">
+        <Navbar className="bg-body-tertiary" fixed="top" style={{ height: "7vh" }}>
           <Container fluid className="d-flex justify-content-start align-items-center px-4">
 
             <div className="d-flex justify-content-start align-items-center gap-4">
@@ -21,7 +21,7 @@ export default function NavbarApp() {
               {/* TODO: variar segun la empresa seleccionada, la base de datos independiente. */}
               <p className="text-light m-0 fw-normal" >Área Aplicacion</p>
               <span className="text-primary fs-5 mx-1">{">"}</span>
-              <p className="text-light m-0 fw-normal" >Grupo Modulos</p>E
+              <p className="text-light m-0 fw-normal" >Grupo Modulos</p>
               <span className="text-primary fs-5 mx-1">{">"}</span>
               <p className="text-light m-0 fw-normal" >Subgrupo Modulos</p>
               <span className="text-primary fs-5 mx-1">{">"}</span>
