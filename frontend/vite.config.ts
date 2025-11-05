@@ -23,6 +23,14 @@ export default defineConfig(({ mode }) => {
           changeOrigin: Boolean(env.SERVER_PROXY_API_CHANGE_ORIGIN)
         }
       }
+    },
+
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true // Ocultar warnings de dependencias Sass
+        }
+      }
     }
   };
 });
