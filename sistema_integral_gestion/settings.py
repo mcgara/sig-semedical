@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 from decouple import config
-from . import reload_hooks as _
+
+# Set hooks
+from . import hooks as _
 
 # Ensure UTF-8 encoding when reading .env file
 BASE_DIR_TEMP = Path(__file__).resolve().parent.parent
@@ -42,8 +45,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
 
-    "sig_base",
-    "sistema_integral_contactabilidad",
 ]
 
 MIDDLEWARE = [
@@ -85,7 +86,7 @@ WSGI_APPLICATION = "sistema_integral_gestion.wsgi.application"
 # Database configuration
 DATABASES = {
     "default": {
-        'ENGINE': 'django.db.backends.postgresql',
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": str(config("DB_NAME")),
         "USER": str(config("DB_USER")),
         "PASSWORD": str(config("DB_PASSWORD")),
@@ -147,3 +148,15 @@ ALLOWED_HOSTS = [
     "10.10.23.68",
     "0.0.0.0",
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}

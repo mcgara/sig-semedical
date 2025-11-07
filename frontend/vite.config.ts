@@ -8,9 +8,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: isDev ? "/" : "/static/frontend/",
+    base: isDev ? "/" : "/static/",
     build: {
-      outDir: resolve(__dirname, "../static/frontend"),
+      outDir: resolve(__dirname, "../static"),
       emptyOutDir: true,
     },
     server: {
